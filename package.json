@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src --ext .js,.jsx --fix && prettier -w src",
+    "test": "eslint src --ext .js,.jsx && prettier -c src"
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
