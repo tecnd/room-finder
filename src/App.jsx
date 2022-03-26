@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ComboWrapper from "./ComboWrapper";
 import Calendar from "./Calendar";
+import Hamburger from "./Hamburger";
 import data from "./rooms.json";
 
 const halls = Object.keys(data).sort();
@@ -39,13 +40,19 @@ export default function App() {
   }
   const events = data[selectedHall][selectedRoom];
   return (
-    <div className="flex flex-col justify-center align-center items-center min-h-screen">
-      <ComboWrapper list={halls} value={selectedHall} onChange={setHall} />
-      <ComboWrapper list={rooms} value={selectedRoom} onChange={setRoom} />
-      <p>
-        {selectedHall} {selectedRoom}
-      </p>
-      <Calendar events={events} />
-    </div>
+    <>
+      <Hamburger>
+        <p className="text-gray-900 pt-3">Hall</p>
+        <ComboWrapper list={halls} value={selectedHall} onChange={setHall} />
+        <p className="text-gray-900 pt-3">Room</p>
+        <ComboWrapper list={rooms} value={selectedRoom} onChange={setRoom} />
+      </Hamburger>
+      <div className="flex flex-col justify-center align-center items-center min-h-screen">
+        <h1 className="text-3xl py-3">
+          {selectedHall} {selectedRoom}
+        </h1>
+        <Calendar events={events} />
+      </div>
+    </>
   );
 }
