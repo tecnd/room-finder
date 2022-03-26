@@ -67,7 +67,7 @@ export default function Hamburger(props) {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="flex h-full flex-col bg-white py-6 shadow-xl">
+                  <div className="flex h-full flex-col bg-gray-300 py-6 shadow-xl">
                     <div className="px-4 sm:px-6">
                       <Dialog.Title className="text-lg font-bold text-gray-900">
                         Open Room List
