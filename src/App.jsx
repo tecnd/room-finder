@@ -1,29 +1,29 @@
-import { Fragment, useState } from 'react'
-import { Combobox, Transition } from '@headlessui/react'
-import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
+import { Fragment, useState } from "react";
+import { Combobox, Transition } from "@headlessui/react";
+import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
 const people = [
-  { id: 1, name: 'Wade Cooper' },
-  { id: 2, name: 'Arlene Mccoy' },
-  { id: 3, name: 'Devon Webb' },
-  { id: 4, name: 'Tom Cook' },
-  { id: 5, name: 'Tanya Fox' },
-  { id: 6, name: 'Hellen Schmidt' },
-]
+  { id: 1, name: "Wade Cooper" },
+  { id: 2, name: "Arlene Mccoy" },
+  { id: 3, name: "Devon Webb" },
+  { id: 4, name: "Tom Cook" },
+  { id: 5, name: "Tanya Fox" },
+  { id: 6, name: "Hellen Schmidt" },
+];
 
 export default function App() {
-  const [selected, setSelected] = useState(people[0])
-  const [query, setQuery] = useState('')
+  const [selected, setSelected] = useState(people[0]);
+  const [query, setQuery] = useState("");
 
   const filteredPeople =
-    query === ''
+    query === ""
       ? people
       : people.filter((person) =>
           person.name
             .toLowerCase()
-            .replace(/\s+/g, '')
-            .includes(query.toLowerCase().replace(/\s+/g, ''))
-        )
+            .replace(/\s+/g, "")
+            .includes(query.toLowerCase().replace(/\s+/g, ""))
+        );
 
   return (
     <div className="flex justify-center align-center items-center min-h-screen">
@@ -47,10 +47,10 @@ export default function App() {
             leave="transition ease-in duration-100"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
-            afterLeave={() => setQuery('')}
+            afterLeave={() => setQuery("")}
           >
             <Combobox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-              {filteredPeople.length === 0 && query !== '' ? (
+              {filteredPeople.length === 0 && query !== "" ? (
                 <div className="cursor-default select-none relative py-2 px-4 text-gray-700">
                   Nothing found.
                 </div>
@@ -60,7 +60,7 @@ export default function App() {
                     key={person.id}
                     className={({ active }) =>
                       `cursor-default select-none relative py-2 pl-10 pr-4 ${
-                        active ? 'text-white bg-teal-600' : 'text-gray-900'
+                        active ? "text-white bg-teal-600" : "text-gray-900"
                       }`
                     }
                     value={person}
@@ -69,7 +69,7 @@ export default function App() {
                       <>
                         <span
                           className={`block truncate ${
-                            selected ? 'font-medium' : 'font-normal'
+                            selected ? "font-medium" : "font-normal"
                           }`}
                         >
                           {person.name}
@@ -77,7 +77,7 @@ export default function App() {
                         {selected ? (
                           <span
                             className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
-                              active ? 'text-white' : 'text-teal-600'
+                              active ? "text-white" : "text-teal-600"
                             }`}
                           >
                             <CheckIcon className="w-5 h-5" aria-hidden="true" />
@@ -93,5 +93,5 @@ export default function App() {
         </div>
       </Combobox>
     </div>
-  )
+  );
 }
