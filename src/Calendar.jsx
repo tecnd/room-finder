@@ -81,9 +81,10 @@ export default function Calendar({ events }) {
 
       cal.push(
         <div
-          className={`col-start-${colNum} bg-red-500 text-center rounded border-2 border-black `}
+          className={`col-start-${colNum} bg-amber-400 text-slate-900 text-center text-sm flex rounded border-1 border-black `}
           style={{ gridRow: `${start} / ${end}` }}
         >
+          <div class='mx-auto pt-1'>
           <p>{cid}</p>
           <p className="hidden md:block">{time}</p>
         </div>
@@ -92,7 +93,7 @@ export default function Calendar({ events }) {
   }
 
   return (
-    <div className="grid grid-cols-8 grid-rows-[minmax(0,_1fr)_repeat(192,_5px)] auto-cols-max gap-x-1 w-full sm:w-5/6">
+    <div className="grid grid-cols-8 grid-rows-[minmax(0,_1fr)_repeat(192,_5px)] auto-cols-max gap-x-1 w-full sm:w-2/3">
       {days}
       {lines}
       {cal}
