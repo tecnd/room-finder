@@ -1,5 +1,5 @@
 {
-  "John E. Boswell Hall": {
+  "Boswell Hall": {
     "20": {
       "M": [
         ["0800-0850", "MATH 104 02"],
@@ -610,7 +610,7 @@
       "U": []
     }
   },
-  "James Blair Hall": {
+  "Blair Hall": {
     "221": {
       "M": [
         ["0900-0950", "HIST 212 02"],
@@ -1720,7 +1720,7 @@
       "U": []
     }
   },
-  "Integrated Science Center": {
+  "ISC": {
     "1280": {
       "M": [
         ["0900-0950", "MATH 100 01"],
@@ -2335,7 +2335,7 @@
       "U": []
     }
   },
-  "Blow Memorial Hall": {
+  "Blow Hall": {
     "334": {
       "M": [
         ["0900-0950", "CSCI 140 01"],
@@ -4733,7 +4733,7 @@
       "U": []
     }
   },
-  "McLeodTyler Integ Wellness Ctr": {
+  "Wellness Ctr": {
     "176": {
       "M": [["1200-1250", "INTR 110 06"]],
       "T": [],
@@ -4753,7 +4753,7 @@
       "U": []
     }
   },
-  "Marshall-Wythe School of Law": {
+  "School of Law": {
     "119": {
       "M": [
         ["1000-1115", "LAW 110 03"],
