@@ -38,10 +38,10 @@ for (let hour = 7; hour <= 22; hour++) {
   let start = (hour - 7) * 12 + 2;
   lines.push(
     <div
-      className="bg-white h-px col-span-full"
+      className="bg-white h-px col-span-full col-start-2"
       style={{ gridRowStart: start }}
     >
-      {hour + ":00"}
+      <p className="w-12 text-right -ml-14 -mt-3">{hour + ":00"}</p>
     </div>
   );
 }
@@ -94,7 +94,7 @@ export default function Calendar({ events }) {
   }
 
   return (
-    <div className="grid grid-cols-8 grid-rows-[minmax(0,_1fr)_repeat(192,_5px)] auto-cols-max gap-x-1 w-full sm:w-2/3">
+    <div className="grid grid-cols-[3rem_repeat(7,_minmax(0,_1fr))] grid-rows-[minmax(0,_1fr)_repeat(192,_5px)] auto-cols-max gap-x-1 w-full sm:w-2/3">
       {days}
       {lines}
       {cal}
