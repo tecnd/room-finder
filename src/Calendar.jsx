@@ -109,7 +109,7 @@ export default function Calendar({ events }) {
 
       cal.push(
         <div
-          className={`col-start-${colNum} bg-amber-400 text-slate-900 text-center text-sm flex rounded border-2 border-black `}
+          className={`col-start-${colNum} bg-amber-400 text-slate-900 text-center text-sm flex rounded-lg drop-shadow-md drop-shadow-gray-800 transition hover:shadow-sm hover:shadow-gray-900 hover:scale-105 border-2 border-black `}
           style={{ gridRow: `${start} / ${end}` }}
         >
           <div className="mx-auto pt-1">
