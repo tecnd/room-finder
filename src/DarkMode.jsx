@@ -50,7 +50,7 @@ export default function DarkMode() {
                     }}
                   >
                     <MoonIcon className="w-7 h-7 mr-2" />
-                    Dark Mode
+                    Tribe Mode
                   </button>
                 )}
               </Menu.Item>
