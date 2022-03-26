@@ -85,14 +85,14 @@ export default function Calendar({ events }) {
           style={{ gridRow: `${start} / ${end}` }}
         >
           <p>{cid}</p>
-          <p>{time}</p>
+          <p className="hidden md:block">{time}</p>
         </div>
       );
     }
   }
 
   return (
-    <div className="grid grid-cols-8 grid-rows-[minmax(0,_1fr)_repeat(192,_5px)] auto-cols-max gap-x-1 w-full">
+    <div className="grid grid-cols-8 grid-rows-[minmax(0,_1fr)_repeat(192,_5px)] auto-cols-max gap-x-1 w-full sm:w-5/6">
       {days}
       {lines}
       {cal}
