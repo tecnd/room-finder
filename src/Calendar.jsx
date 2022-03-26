@@ -113,7 +113,7 @@ export default function Calendar({ events }) {
           style={{ gridRow: `${start} / ${end}` }}
         >
           <div className="mx-auto pt-1">
-            <p>{cid}</p>
+            <p>{cid.split(" ").slice(0, 2).join(" ")}</p>
             <p className="hidden md:block">{time}</p>
           </div>
         </div>
