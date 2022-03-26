@@ -11,7 +11,6 @@ export default function App() {
   if (!rooms.includes(selectedRoom)) {
     setRoom(rooms[0]);
   }
-  console.log("ping");
   return (
     <div className="flex flex-col justify-center align-center items-center min-h-screen">
       <ComboWrapper list={halls} value={selectedHall} onChange={setHall} />
