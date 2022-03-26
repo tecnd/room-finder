@@ -1,14 +1,22 @@
-import { Fragment } from "react";
+import { useState, Fragment } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
 export default function ComboWrapper({
-  value, // current value of combo (react state)
+  list, // list to choose from
+  value, // current selected element (react state)
   onChange, // hook that updates value
-  query, // string used to filter list (react state)
-  setQuery, // hook that updates query
-  filter, // filtered list
 }) {
+  const [query, setQuery] = useState("");
+  const filteredList =
+    query === ""
+      ? list
+      : list.filter((element) =>
+          element
+            .toLowerCase()
+            .replace(/\s+/g, "")
+            .includes(query.toLowerCase().replace(/\s+/g, ""))
+        );
   return (
     <Combobox value={value} onChange={onChange}>
       <div className="relative mt-1">
@@ -31,13 +39,13 @@ export default function ComboWrapper({
           leaveTo="opacity-0"
           afterLeave={() => setQuery("")}
         >
-          <Combobox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-            {filter.length === 0 && query !== "" ? (
+          <Combobox.Options className="absolute w-full py-1 mt-1 overflow-auto text-base bg-white rounded-md shadow-lg max-h-60 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm z-50">
+            {filteredList.length === 0 && query !== "" ? (
               <div className="cursor-default select-none relative py-2 px-4 text-gray-700">
                 Nothing found.
               </div>
             ) : (
-              filter.map((person) => (
+              filteredList.map((person) => (
                 <Combobox.Option
                   key={person}
                   className={({ active }) =>
