@@ -48,7 +48,7 @@ export default function App() {
         <ComboWrapper list={rooms} value={selectedRoom} onChange={setRoom} />
       </Hamburger>
       <div className="flex flex-col justify-center align-center items-center min-h-screen">
-        <h1 className="text-3xl py-3">
+        <h1 className="text-2xl py-3 font-bold">
           {selectedHall} {selectedRoom}
         </h1>
         <Calendar events={events} />

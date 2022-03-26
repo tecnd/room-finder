@@ -15,7 +15,7 @@ export default function Hamburger(props) {
           onClick={() => setOpen(true)}
         >
           <span className="sr-only">Close panel</span>
-          <MenuIcon className="h-6 w-6" aria-hidden="true" />
+          <MenuIcon className="h-7 w-7" aria-hidden="true" />
         </button>
       </div>
       <Transition.Root show={open} as={Fragment}>
@@ -67,7 +67,7 @@ export default function Hamburger(props) {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="flex h-full flex-col bg-white py-6 shadow-xl">
+                  <div className="flex h-full flex-col bg-gray-300 py-6 shadow-xl">
                     <div className="px-4 sm:px-6">
                       <Dialog.Title className="text-lg font-bold text-gray-900">
                         Open Room List
