@@ -27,7 +27,7 @@ export default function ComboWrapper({
           />
           <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
             <SelectorIcon
-              className="w-5 h-5 text-gray-400"
+              className="w-5 h-5 text-gray-700"
               aria-hidden="true"
             />
           </Combobox.Button>
@@ -50,7 +50,7 @@ export default function ComboWrapper({
                   key={person}
                   className={({ active }) =>
                     `cursor-default select-none relative py-2 pl-10 pr-4 ${
-                      active ? "text-white bg-gray-400" : "text-gray-900"
+                      active ? "text-white bg-neutral-600" : "text-gray-900"
                     }`
                   }
                   value={person}

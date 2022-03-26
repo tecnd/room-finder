@@ -11,7 +11,7 @@ export default function Hamburger(props) {
       <div className="absolute top-0 left-0 flex pt-4 pl-2 sm:pl-4">
         <button
           type="button"
-          className="rounded-md text-gray-300 transition delay-75 hover:scale-125 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+          className="rounded-md text-gray-300 transition delay-75 hover:scale-110 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
           onClick={() => setOpen(true)}
         >
           <span className="sr-only">Close panel</span>
@@ -59,11 +59,11 @@ export default function Hamburger(props) {
                     <div className="absolute top-0 right-0 -mr-8 flex pt-4 pl-2 sm:-mr-10 sm:pl-4">
                       <button
                         type="button"
-                        className="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+                        className="rounded-md text-gray-300 transition hover:scale-110 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
                         onClick={() => setOpen(false)}
                       >
                         <span className="sr-only">Close panel</span>
-                        <XIcon className="h-6 w-6" aria-hidden="true" />
+                        <XIcon className="h-7 w-7" aria-hidden="true" />
                       </button>
                     </div>
                   </Transition.Child>
