@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ComboWrapper from "./ComboWrapper";
 import Calendar from "./Calendar";
 import Hamburger from "./Hamburger";
+import DarkMode from "./DarkMode";
 import data from "./rooms.json";
 import largeLogo from "./images/logo_with_line.png";
 import smallLogo from "./images/single-line-wordmark.png";
@@ -50,8 +51,9 @@ export default function App() {
         <p className="text-gray-900 pt-3">Room</p>
         <ComboWrapper list={rooms} value={selectedRoom} onChange={setRoom} />
       </Hamburger>
+      <DarkMode />
       <div className="flex flex-col justify-center align-center items-center min-h-screen">
-        <div className="flex flex-col sm:flex-row items-center bg-white rounded m-5 p-3 w-64 sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-center bg-stone-100 dark:bg-slate-200 rounded m-5 p-3 w-64 sm:w-auto">
           <img src={largeLogo} className="hidden sm:block mr-5" />
           <img src={smallLogo} className="sm:hidden mb-2" />
           <h1 className="text-3xl font-bold text-emerald-900">
