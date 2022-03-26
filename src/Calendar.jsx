@@ -59,9 +59,10 @@ const dayMap = new Map([
   [2, "U"],
   [3, "M"],
   [4, "T"],
-  [5, "R"],
-  [6, "F"],
-  [7, "S"],
+  [5, "W"],
+  [6, "R"],
+  [7, "F"],
+  [8, "S"],
 ]);
 
 export default function Calendar({ events }) {
