@@ -86,8 +86,7 @@ export default function Calendar({ events }) {
         >
           <div class='mx-auto pt-1'>
           <p>{cid}</p>
-          <p>{time}</p>
-          </div>
+          <p className="hidden md:block">{time}</p>
         </div>
       );
     }
