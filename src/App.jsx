@@ -38,6 +38,7 @@ export default function App() {
   if (!rooms.includes(selectedRoom)) {
     setRoom(rooms[0]);
   }
+
   const events = data[selectedHall][selectedRoom];
   return (
     <>

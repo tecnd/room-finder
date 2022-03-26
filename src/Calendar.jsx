@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 // Force Tailwind to generate col-start-{n} classes
 const days = (
   <>
@@ -73,6 +74,33 @@ const dayMap = new Map([
 ]);
 
 export default function Calendar({ events }) {
+  // Update current day and time every second
+  const [dayOfWeek, setDay] = useState(0);
+  const [hour, setHour] = useState(0);
+  const [minute, setMinute] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => {
+      let now = new Date();
+      setDay(now.getDay());
+      setHour(now.getHours());
+      setMinute(now.getMinutes());
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+  let nowLine = <></>;
+  if (hour > 6 && hour < 23) {
+    let pos = Math.floor((hour - 7) * 12 + 2 + minute / 5);
+    nowLine = (
+      <div
+        className="h-px bg-red-500 col-span-full col-start-2"
+        style={{ gridRowStart: pos }}
+      >
+        <p className="w-12 text-center -ml-12 -mt-3 bg-red-500 rounded">{`${hour}:${minute
+          .toString()
+          .padStart(2, "0")}`}</p>
+      </div>
+    );
+  }
   const cal = [];
   for (const [colNum, day] of dayMap) {
     for (const block of events[day]) {
@@ -85,7 +113,7 @@ export default function Calendar({ events }) {
           style={{ gridRow: `${start} / ${end}` }}
         >
           <div className="mx-auto pt-1">
-            <p>{cid}</p>
+            <p>{cid.split(" ").slice(0, 2).join(" ")}</p>
             <p className="hidden md:block">{time}</p>
           </div>
         </div>
@@ -98,6 +126,12 @@ export default function Calendar({ events }) {
       {days}
       {lines}
       {cal}
+      <div
+        className={`col-start-${
+          dayOfWeek + 2
+        } row-span-full bg-white rounded opacity-50 -z-50`}
+      ></div>
+      {nowLine}
     </div>
   );
 }
