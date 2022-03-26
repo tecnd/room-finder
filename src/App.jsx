@@ -12,6 +12,7 @@ export default function App() {
   if (!rooms.includes(selectedRoom)) {
     setRoom(rooms[0]);
   }
+  const events = data[selectedHall][selectedRoom];
   return (
     <div className="flex flex-col justify-center align-center items-center min-h-screen">
       <ComboWrapper list={halls} value={selectedHall} onChange={setHall} />
@@ -19,7 +20,7 @@ export default function App() {
       <p>
         {selectedHall} {selectedRoom}
       </p>
-      <Calendar />
+      <Calendar events={events} />
     </div>
   );
 }
