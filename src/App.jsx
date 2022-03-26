@@ -3,6 +3,8 @@ import ComboWrapper from "./ComboWrapper";
 import Calendar from "./Calendar";
 import Hamburger from "./Hamburger";
 import data from "./rooms.json";
+import largeLogo from "./images/logo_with_line.png";
+import smallLogo from "./images/single-line-wordmark.png";
 
 const halls = Object.keys(data).sort();
 
@@ -49,9 +51,16 @@ export default function App() {
         <ComboWrapper list={rooms} value={selectedRoom} onChange={setRoom} />
       </Hamburger>
       <div className="flex flex-col justify-center align-center items-center min-h-screen">
-        <h1 className="text-2xl py-3 font-bold">
+        <div className="flex flex-col sm:flex-row items-center bg-slate-200 rounded m-5 p-3">
+          <img src={largeLogo} className="hidden sm:block mr-5" />
+          <img src={smallLogo} className="sm:hidden mb-2" />
+          <h1 className="text-3xl font-bold text-emerald-900">
+            Open Room List
+          </h1>
+        </div>
+        <h2 className="text-2xl py-3 font-bold">
           {selectedHall} {selectedRoom}
-        </h1>
+        </h2>
         <Calendar events={events} />
       </div>
     </>
