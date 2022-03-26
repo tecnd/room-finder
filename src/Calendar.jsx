@@ -1,26 +1,33 @@
 // Force Tailwind to generate col-start-{n} classes
 const days = (
   <>
-    <div className="row-start-1 col-start-2">
-      <p>Sunday</p>
+    <div className="row-start-1 col-start-2 text-center">
+      <p className="hidden md:block">Sunday</p>
+      <p className="block md:hidden">S</p>
     </div>
-    <div className="row-start-1 col-start-3">
-      <p>Monday</p>
+    <div className="row-start-1 col-start-3 text-center">
+      <p className="hidden md:block">Monday</p>
+      <p className="block md:hidden">M</p>
     </div>
-    <div className="row-start-1 col-start-4">
-      <p>Tuesday</p>
+    <div className="row-start-1 col-start-4 text-center">
+      <p className="hidden md:block">Tuesday</p>
+      <p className="block md:hidden">T</p>
     </div>
-    <div className="row-start-1 col-start-5">
-      <p>Wednesday</p>
+    <div className="row-start-1 col-start-5 text-center">
+      <p className="hidden md:block">Wednesday</p>
+      <p className="block md:hidden">W</p>
     </div>
-    <div className="row-start-1 col-start-6">
-      <p>Thursday</p>
+    <div className="row-start-1 col-start-6 text-center">
+      <p className="hidden md:block">Thursday</p>
+      <p className="block md:hidden">T</p>
     </div>
-    <div className="row-start-1 col-start-7">
-      <p>Friday</p>
+    <div className="row-start-1 col-start-7 text-center">
+      <p className="hidden md:block">Friday</p>
+      <p className="block md:hidden">F</p>
     </div>
-    <div className="row-start-1 col-start-8">
-      <p>Saturday</p>
+    <div className="row-start-1 col-start-8 text-center">
+      <p className="hidden md:block">Saturday</p>
+      <p className="block md:hidden">S</p>
     </div>
   </>
 );
@@ -74,17 +81,18 @@ export default function Calendar({ events }) {
 
       cal.push(
         <div
-          className={`col-start-${colNum} bg-red-500 text-center rounded`}
+          className={`col-start-${colNum} bg-red-500 text-center rounded border-2 border-black `}
           style={{ gridRow: `${start} / ${end}` }}
         >
-          {cid} {time}
+          <p>{cid}</p>
+          <p>{time}</p>
         </div>
       );
     }
   }
 
   return (
-    <div className="grid grid-cols-8 grid-rows-[minmax(0,_1fr)_repeat(192,_5px)] auto-rows-fr gap-x-1 max-w-full md:max-w-screen-md">
+    <div className="grid grid-cols-8 grid-rows-[minmax(0,_1fr)_repeat(192,_5px)] auto-cols-max gap-x-1 w-full">
       {days}
       {lines}
       {cal}
