@@ -8,7 +8,7 @@ export default function Hamburger(props) {
 
   return (
     <>
-      <div className="absolute top-0 left-0 flex pt-4 pl-2 sm:pl-4">
+      <div className="fixed top-0 left-0 flex pt-4 pl-2 sm:pl-4">
         <button
           type="button"
           className="rounded-md text-gray-300 transition delay-75 hover:scale-110 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
