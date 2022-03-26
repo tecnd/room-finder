@@ -3,12 +3,11 @@ import { Combobox, Transition } from "@headlessui/react";
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
 const people = [
-  { id: 1, name: "Wade Cooper" },
-  { id: 2, name: "Arlene Mccoy" },
-  { id: 3, name: "Devon Webb" },
-  { id: 4, name: "Tom Cook" },
-  { id: 5, name: "Tanya Fox" },
-  { id: 6, name: "Hellen Schmidt" },
+  "Durward Reynolds",
+  "Kenton Towne",
+  "Therese Wunsch",
+  "Benedict Kessler",
+  "Katelyn Rohan",
 ];
 
 export default function App() {
@@ -32,7 +31,6 @@ export default function App() {
           <div className="relative w-full text-left bg-white rounded-lg shadow-md cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-teal-300 focus-visible:ring-offset-2 sm:text-sm overflow-hidden">
             <Combobox.Input
               className="w-full border-none focus:ring-0 py-2 pl-3 pr-10 text-sm leading-5 text-gray-900"
-              displayValue={(person) => person.name}
               onChange={(event) => setQuery(event.target.value)}
             />
             <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
@@ -57,7 +55,7 @@ export default function App() {
               ) : (
                 filteredPeople.map((person) => (
                   <Combobox.Option
-                    key={person.id}
+                    key={person}
                     className={({ active }) =>
                       `cursor-default select-none relative py-2 pl-10 pr-4 ${
                         active ? "text-white bg-teal-600" : "text-gray-900"
@@ -72,7 +70,7 @@ export default function App() {
                             selected ? "font-medium" : "font-normal"
                           }`}
                         >
-                          {person.name}
+                          {person}
                         </span>
                         {selected ? (
                           <span
