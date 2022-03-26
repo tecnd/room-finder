@@ -11,9 +11,10 @@ export default function Hamburger(props) {
       <div className="fixed top-0 left-0 flex pt-4 pl-2 sm:pl-4">
         <button
           type="button"
-          className="rounded-md text-gray-300 transition delay-75 hover:scale-110 hover:text-white focus:outline-none focus:ring-2 focus:ring-white bg-slate-200 bg-opacity-50 p-1"
+          className="rounded-md text-gray-400 dark:text-gray-300 transition delay-75 hover:scale-110 hover:text-gray-400 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-white bg-black bg-opacity-20 hover:bg-opacity-30 p-1"
           onClick={() => setOpen(true)}
         >
+          <span className="sr-only">Close panel</span>
           <MenuIcon className="h-7 w-7" aria-hidden="true" />
         </button>
       </div>
@@ -58,14 +59,15 @@ export default function Hamburger(props) {
                     <div className="absolute top-0 right-0 -mr-8 flex pt-4 pl-2 sm:-mr-10 sm:pl-4">
                       <button
                         type="button"
-                        className="rounded-md text-gray-300 transition hover:scale-110 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
+                        className="rounded-md text-white dark:text-gray-300 transition hover:scale-110 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
                         onClick={() => setOpen(false)}
                       >
+                        <span className="sr-only">Close panel</span>
                         <XIcon className="h-7 w-7" aria-hidden="true" />
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="flex h-full flex-col bg-gray-300 py-6 shadow-xl">
+                  <div className="flex h-full flex-col bg-gray-200 py-6 shadow-xl">
                     <div className="px-4 sm:px-6">
                       <Dialog.Title className="text-lg font-bold text-gray-900">
                         Open Room List

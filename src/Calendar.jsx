@@ -39,7 +39,7 @@ for (let hour = 7; hour <= 22; hour++) {
   let start = (hour - 7) * 12 + 2;
   lines.push(
     <div
-      className="bg-white h-px col-span-full col-start-2"
+      className="bg-emerald-900 dark:bg-white h-px col-span-full col-start-2"
       style={{ gridRowStart: start }}
     >
       <p className="w-12 text-right -ml-14 -mt-3">{hour + ":00"}</p>
@@ -109,7 +109,7 @@ export default function Calendar({ events }) {
 
       cal.push(
         <div
-          className={`col-start-${colNum} bg-amber-400 text-slate-900 text-center text-sm flex rounded-lg drop-shadow-md drop-shadow-gray-800 transition hover:shadow-sm hover:shadow-gray-900 hover:scale-105 border-2 border-black `}
+          className={`col-start-${colNum} bg-amber-200 dark:bg-amber-400 text-slate-900 text-center text-sm flex rounded-lg drop-shadow-md drop-shadow-gray-800 transition hover:shadow-sm hover:shadow-gray-900 hover:scale-105 border border-black `}
           style={{ gridRow: `${start} / ${end}` }}
         >
           <div className="mx-auto pt-1">
@@ -129,7 +129,7 @@ export default function Calendar({ events }) {
       <div
         className={`col-start-${
           dayOfWeek + 2
-        } row-span-full bg-white rounded opacity-50 -z-50`}
+        } row-span-full bg-emerald-900 dark:bg-white rounded opacity-25 -z-50`}
       ></div>
       {nowLine}
     </div>
