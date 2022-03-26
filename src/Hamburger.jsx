@@ -11,7 +11,7 @@ export default function Hamburger(props) {
       <div className="absolute top-0 left-0 flex pt-4 pl-2 sm:pl-4">
         <button
           type="button"
-          className="rounded-md text-gray-400 transition delay-75 hover:scale-110 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-white"
+          className="rounded-md text-gray-400 transition delay-75 hover:scale-110 hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400"
           onClick={() => setOpen(true)}
         >
           <span className="sr-only">Close panel</span>
@@ -67,7 +67,7 @@ export default function Hamburger(props) {
                       </button>
                     </div>
                   </Transition.Child>
-                  <div className="flex h-full flex-col bg-gray-300 py-6 shadow-xl">
+                  <div className="flex h-full flex-col bg-gray-200 py-6 shadow-xl">
                     <div className="px-4 sm:px-6">
                       <Dialog.Title className="text-lg font-bold text-gray-900">
                         Open Room List

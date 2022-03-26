@@ -51,7 +51,7 @@ export default function App() {
         <ComboWrapper list={rooms} value={selectedRoom} onChange={setRoom} />
       </Hamburger>
       <div className="flex flex-col justify-center align-center items-center min-h-screen">
-        <div className="flex flex-col sm:flex-row items-center bg-white rounded m-5 p-3 w-64 sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-center bg-gray-100 rounded m-5 p-3 w-64 sm:w-auto">
           <img src={largeLogo} className="hidden sm:block mr-5" />
           <img src={smallLogo} className="sm:hidden mb-2" />
           <h1 className="text-3xl font-bold text-emerald-900">
