@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ComboWrapper from "./ComboWrapper";
+import Calendar from "./Calendar";
 import data from "./rooms.json";
 
 const halls = Object.keys(data).sort();
@@ -15,9 +16,10 @@ export default function App() {
     <div className="flex flex-col justify-center align-center items-center min-h-screen">
       <ComboWrapper list={halls} value={selectedHall} onChange={setHall} />
       <ComboWrapper list={rooms} value={selectedRoom} onChange={setRoom} />
-      <p className="text-white">
+      <p>
         {selectedHall} {selectedRoom}
       </p>
+      <Calendar />
     </div>
   );
 }

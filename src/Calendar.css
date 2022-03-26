@@ -1,0 +1,3 @@
+.calendar {
+  grid-template-rows: minmax(0, 1fr) repeat(192, 4px);
+}
