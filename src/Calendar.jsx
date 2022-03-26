@@ -84,9 +84,10 @@ export default function Calendar({ events }) {
           className={`col-start-${colNum} bg-amber-400 text-slate-900 text-center text-sm flex rounded border-1 border-black `}
           style={{ gridRow: `${start} / ${end}` }}
         >
-          <div class='mx-auto pt-1'>
-          <p>{cid}</p>
-          <p className="hidden md:block">{time}</p>
+          <div className="mx-auto pt-1">
+            <p>{cid}</p>
+            <p className="hidden md:block">{time}</p>
+          </div>
         </div>
       );
     }
