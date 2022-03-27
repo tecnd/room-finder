@@ -78,7 +78,7 @@ export default function DarkMode() {
                     }}
                   >
                     <DesktopComputerIcon className="w-7 h-7 mr-2" />
-                    Use System Settings
+                    <p class="text-left shrink">Use System Settings</p>
                   </button>
                 )}
               </Menu.Item>
