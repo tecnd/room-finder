@@ -11,7 +11,7 @@ export default function Hamburger(props) {
       <div className="fixed top-0 left-0 flex pt-4 pl-2 sm:pl-4">
         <button
           type="button"
-          className="rounded-md text-gray-400 dark:text-gray-300 transition delay-75 hover:scale-110 hover:text-gray-400 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-white bg-black bg-opacity-20 hover:bg-opacity-30 p-1"
+          className="rounded-md text-gray-100 dark:text-gray-300 transition delay-75 hover:scale-110 hover:text-gray-50 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-white bg-black bg-opacity-20 hover:bg-opacity-30 p-1"
           onClick={() => setOpen(true)}
         >
           <span className="sr-only">Close panel</span>
