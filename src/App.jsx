@@ -9,6 +9,59 @@ import smallLogo from "./images/single-line-wordmark.png";
 
 const halls = Object.keys(data).sort();
 
+const dayMap = new Map([
+  [0, "U"],
+  [1, "M"],
+  [2, "T"],
+  [3, "W"],
+  [4, "R"],
+  [5, "F"],
+  [6, "S"],
+]);
+
+/**
+ * Converts from a schedule (entry indicates busy) to availability (entry indicates free)
+ * @param {string[]} schedule
+ * @returns {string[]}
+ */
+function scheduleToAvail(schedule) {
+  const times = [];
+  for (const e of schedule) {
+    times.push(e[0]);
+  }
+  var start = 0;
+  const avails = [];
+  for (const e of times) {
+    let [first, second] = e.split("-");
+    if (parseInt(first) >= parseInt(start)) {
+      avails.push(start.toString().padStart(4, "0") + "-" + first);
+    }
+    start = second;
+  }
+  avails.push(start + "-" + "2400");
+  return avails;
+}
+/**
+ * Checks if there is an 1 hour free window from the given time in the given availability list
+ * @param {string} time
+ * @param {string[]} avails
+ * @returns {boolean}
+ */
+function isAvailable(time, avails) {
+  let numTime = parseInt(time);
+  // No classes before 7 am or after 10 pm
+  if (numTime <= 600 || numTime >= 2200) {
+    return true;
+  }
+  for (const a of avails) {
+    let [first, second] = a.split("-");
+    if (numTime >= parseInt(first) && numTime + 100 <= parseInt(second)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export default function App() {
   const [selectedHall, setHall] = useState(halls[0]);
   useEffect(() => {
@@ -24,32 +77,44 @@ export default function App() {
 
   const rooms = Object.keys(data[selectedHall]).sort();
   const [selectedRoom, setRoom] = useState(rooms[0]);
-  /* doesn't work sad sad
-  useEffect(() => {
-    let stored = window.localStorage.getItem("room");
-    if (stored != null && rooms.includes(stored)) {
-      setRoom(stored);
-    } else {
-      console.log(`${stored} is not a value in ${rooms}`);
-    }
-  }, []);
 
-  useEffect(() => {
-    window.localStorage.setItem("room", selectedRoom);
-  }, [selectedRoom]);
-  */
   if (!rooms.includes(selectedRoom)) {
     setRoom(rooms[0]);
   }
 
   const events = data[selectedHall][selectedRoom];
+
+  const now = new Date();
+  const today = dayMap.get(now.getDay());
+  const hour = now.getHours();
+  const minutes = now.getMinutes();
+  const availableRooms = [];
+  for (const room of rooms) {
+    let schedule = data[selectedHall][room][today];
+    if (schedule.length == 0) {
+      availableRooms.push(room);
+    } else {
+      let avail = scheduleToAvail(schedule);
+      if (isAvailable(`${hour}${minutes.toString().padStart(2, "0")}`, avail)) {
+        availableRooms.push(room);
+      }
+    }
+  }
   return (
     <>
       <Hamburger>
-        <p className="text-gray-900 pt-3">Hall</p>
-        <ComboWrapper list={halls} value={selectedHall} onChange={setHall} />
-        <p className="text-gray-900 pt-3">Room</p>
-        <ComboWrapper list={rooms} value={selectedRoom} onChange={setRoom} />
+        <div className="text-gray-900">
+          <p className="pt-3">Hall</p>
+          <ComboWrapper list={halls} value={selectedHall} onChange={setHall} />
+          <p className="pt-3">Room</p>
+          <ComboWrapper list={rooms} value={selectedRoom} onChange={setRoom} />
+          <p className="pt-3">Rooms available now for at least one hour:</p>
+          <ul>
+            {availableRooms.map((room, i) => (
+              <li key={i}>{room}</li>
+            ))}
+          </ul>
+        </div>
       </Hamburger>
       <DarkMode />
       <div className="flex flex-col justify-center align-center items-center min-h-screen">
