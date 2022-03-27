@@ -24,20 +24,7 @@ export default function App() {
 
   const rooms = Object.keys(data[selectedHall]).sort();
   const [selectedRoom, setRoom] = useState(rooms[0]);
-  /* doesn't work sad sad
-  useEffect(() => {
-    let stored = window.localStorage.getItem("room");
-    if (stored != null && rooms.includes(stored)) {
-      setRoom(stored);
-    } else {
-      console.log(`${stored} is not a value in ${rooms}`);
-    }
-  }, []);
 
-  useEffect(() => {
-    window.localStorage.setItem("room", selectedRoom);
-  }, [selectedRoom]);
-  */
   if (!rooms.includes(selectedRoom)) {
     setRoom(rooms[0]);
   }
