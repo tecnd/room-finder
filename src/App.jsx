@@ -108,7 +108,7 @@ export default function App() {
           <ComboWrapper list={halls} value={selectedHall} onChange={setHall} />
           <p className="pt-3">Room</p>
           <ComboWrapper list={rooms} value={selectedRoom} onChange={setRoom} />
-          <p className="pt-3">Available rooms now:</p>
+          <p className="pt-3">Rooms available now for at least one hour:</p>
           <ul>
             {availableRooms.map((room, i) => (
               <li key={i}>{room}</li>
