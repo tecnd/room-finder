@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.17e50649.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Room List</title>
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index.215f89a9.js"></script>
+    <link rel="modulepreload" href="/assets/vendor.d5c02b9f.js">
+    <link rel="stylesheet" href="/assets/index.cfacb875.css">
+  </head>
+  <body
+    class="bg-stone-100 text-emerald-900 dark:bg-emerald-900 dark:text-white"
+  >
+    <div id="root"></div>
+    
+  </body>
+</html>
