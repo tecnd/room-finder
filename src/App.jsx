@@ -53,14 +53,14 @@ export default function App() {
       </Hamburger>
       <DarkMode />
       <div className="flex flex-col justify-center align-center items-center min-h-screen">
-        <div className="flex flex-col sm:flex-row items-center bg-stone-100 dark:bg-slate-200 rounded m-5 p-3 w-64 sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-center dark:bg-slate-200 rounded m-5 p-3 w-64 sm:w-auto">
           <img src={largeLogo} className="hidden sm:block mr-5" />
           <img src={smallLogo} className="sm:hidden mb-2" />
           <h1 className="text-3xl font-bold text-emerald-900 font-serif">
             OPEN ROOM LIST
           </h1>
         </div>
-        <h2 className="text-2xl py-3 font-bold">
+        <h2 className="text-2xl -mt-3 pb-3 font-bold">
           {selectedHall} {selectedRoom}
         </h2>
         <Calendar events={events} />
