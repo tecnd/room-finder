@@ -41,6 +41,7 @@ for (let hour = 7; hour <= 22; hour++) {
     <div
       className="bg-emerald-900 dark:bg-white h-px col-span-full col-start-2"
       style={{ gridRowStart: start }}
+      key={hour}
     >
       <p className="w-12 text-right -ml-14 -mt-3">{hour + ":00"}</p>
     </div>
