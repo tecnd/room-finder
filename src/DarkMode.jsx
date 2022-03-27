@@ -26,7 +26,7 @@ export default function DarkMode() {
                 {({ active }) => (
                   <button
                     className={`${
-                      active ? "bg-violet-500 text-white" : "text-gray-900"
+                      active ? "bg-emerald-900 bg-opacity-25 -z-50 text-gray-900" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                     onClick={() => {
                       localStorage.theme = "light";
@@ -42,7 +42,7 @@ export default function DarkMode() {
                 {({ active }) => (
                   <button
                     className={`${
-                      active ? "bg-violet-500 text-white" : "text-gray-900"
+                      active ? "bg-emerald-900 bg-opacity-25 -z-50 text-gray-900" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                     onClick={() => {
                       localStorage.theme = "dark";
@@ -58,8 +58,8 @@ export default function DarkMode() {
                 {({ active }) => (
                   <button
                     className={`${
-                      active ? "bg-violet-500 text-white" : "text-gray-900"
-                    } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                      active ? "bg-emerald-900 bg-opacity-25 -z-50 text-gray-900" : "text-gray-900"
+                    } group flex rounded-md items-start w-full px-2 py-2 text-sm`}
                     onClick={() => {
                       localStorage.removeItem("theme");
                       if (
