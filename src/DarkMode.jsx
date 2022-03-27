@@ -8,7 +8,10 @@ export default function DarkMode() {
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button className="inline-flex justify-center w-full p-1 bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 transition delay-75 hover:scale-110 dark:hover:text-white">
-            <MoonIcon className="h-7 w-7 text-gray-100 dark:text-gray-300 hover:text-gray-50" aria-hidden="true" />
+            <MoonIcon
+              className="h-7 w-7 text-gray-100 dark:text-gray-300 hover:text-gray-50"
+              aria-hidden="true"
+            />
           </Menu.Button>
         </div>
         <Transition
