@@ -1,5 +1,5 @@
 # Open Room List
-Plots class times for each room so you can see when a room is free. Also lists open rooms in a hall right now. Data scraped from <https://courselist.wm.edu/courselist/>.
+Plots class times for each room so you can see when a room is free. Also lists open rooms in a hall right now. Data scraped from <https://courselist.wm.edu/courselist/>. Live site at <https://openroomlist.tech/>
 
 [Winner of Best UI/UX at Cypher VII!](https://devpost.com/software/openroomlist)
 
