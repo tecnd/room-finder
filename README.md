@@ -1,5 +1,9 @@
-# room-finder
-Plots class times for each room so you can see when a room is free.
+# Open Room List
+Plots class times for each room so you can see when a room is free. Also lists open rooms in a hall right now. Data scraped from <https://courselist.wm.edu/courselist/>.
+
+[Winner of Best UI/UX at Cypher VII!](https://devpost.com/software/openroomlist)
+
+Web app written in [React](https://reactjs.org/), styled with [TailwindCSS](https://tailwindcss.com/), built with [Vite](https://vitejs.dev/), and deployed on GitHub Pages.
 
 `rooms.json` is organized as Hall -> Room -> Day of week -> List of classes, in chronological order. Each element in the list is a 2-tuple of `[startTime-endTime, subject number section]`, for example:
 ```
